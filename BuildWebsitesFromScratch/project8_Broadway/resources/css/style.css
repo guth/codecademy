@@ -6,7 +6,6 @@ html {
 h1 {
 	font-size: 70px;
 	font-weight: bold;
-	color: white;
 }
 
 h2 {
@@ -36,13 +35,21 @@ a {
 	color: white;
 }
 
+#footer a {
+	font-size: 11px;
+	color: white;
+}
+
 .header {
 	background-image: url("../images/flatiron-building.png");
 }
 
+.white {
+	color: white;
+}
+
 #footer {
 	font-size: 11px;
-	color: white;
 	background-color: dimgray;
 	text-align: left;
 }
