@@ -1,19 +1,61 @@
 const printBoard = (board) => {
-	console.log("Current Board:");
-	console.log(board[0].join(" | "));
-	console.log(board[1].join(" | "));
-	console.log(board[2].join(" | "));
+	let boardToPrint = board.map(row => row.join(" | "))
+					   .join("\n");
+	console.log(boardToPrint);
 };
 
-let board = [
-		[" ", " ", " "],
-		[" ", " ", " "],
-		[" ", " ", " "],
-	];
+const generatePlayerBoard = (numRows, numColumns) => {
+	let board = [];
+	for(let r=0; r<numRows; r++)
+	{
+		board.push([]);
+		for(let c=0; c<numColumns; c++)
+		{
+			board[r].push(" ");
+		}
+	}
 
-printBoard(board);
+	return board;
+};
 
-board[0][1] = "1";
-board[2][2] = "B";
+const generateBombBoard = (numRows, numColumns, numBombs) => {
+	let board = [];
+	for(let r=0; r<numRows; r++)
+	{
+		board.push([]);
+		for(let c=0; c<numColumns; c++)
+		{
+			board[r].push(" ");
+		}
+	}
 
-printBoard(board);
+	let numBombsPlaced = 0;
+
+	while(numBombsPlaced < numBombs)
+	{
+		let row = Math.floor(Math.random() * numRows);
+		let column = Math.floor(Math.random() * numColumns);
+		
+		// This can place multiple bombs in the same place and not count it.
+		// This will be fixed later.
+		board[row][column] = "B";
+		numBombsPlaced++;
+	}
+
+	return board;
+};
+
+// let board = [
+// 		[" ", " ", " "],
+// 		[" ", " ", " "],
+// 		[" ", " ", " "],
+// 	];
+
+let playerBoard = generatePlayerBoard(3, 4);
+let bombBoard = generateBombBoard(3, 4, 5);
+
+console.log("Player Board:");
+printBoard(playerBoard);
+
+console.log("Bomb Board:");
+printBoard(bombBoard);
