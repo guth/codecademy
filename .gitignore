@@ -1,0 +1,5 @@
+lib/
+node_modules/
+
+.babelrc
+package-lock.json
