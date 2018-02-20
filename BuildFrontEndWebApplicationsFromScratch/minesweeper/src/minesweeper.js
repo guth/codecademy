@@ -159,32 +159,3 @@ class Game
 const g = new Game(3, 3, 3);
 
 g.playMove(0, 0);
-
-// let b = new Board(3, 3, 2);
-
-// b.print();
-
-// for(let r=0; r<3; r++)
-// {
-// 	for(let c=0; c<3; c++)
-// 	{
-// 		let numNeighbors = b.getNumberOfNeighborBombs(r, c);
-// 		// console.log(`Number of neighbors to (${r},${c}) = ${numNeighbors}`)
-// 		b.flipTile(r, c);
-// 	}
-// }
-
-// b.print();
-
-// let playerBoard = Board.generatePlayerBoard(3, 4);
-// let bombBoard = Board.generateBombBoard(3, 4, 5);
-
-// console.log("Player Board:");
-// printBoard(playerBoard);
-
-// console.log("Bomb Board:");
-// printBoard(bombBoard);
-
-// flipTile(playerBoard, bombBoard, 0, 0);
-// console.log("Updated player board:");
-// printBoard(playerBoard);
