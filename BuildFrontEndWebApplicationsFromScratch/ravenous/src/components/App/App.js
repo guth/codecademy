@@ -4,7 +4,20 @@ import './App.css';
 import BusinessList from '../BusinessList/BusinessList'
 import SearchBar from '../SearchBar/SearchBar'
 
-// Check out solution code: C:\Users\guthr\Downloads\bwa_u2_ravenous_solution_1
+const business = {
+	imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+	name: 'MarginOtto Pizzeria',
+	address: '1010 Paddington Way',
+	city: 'Flavortown',
+	state: 'NY',
+	zipCode: '10101',
+	category: 'Italian',
+	rating: 4.5,
+	reviewCount: 90
+};
+
+// Hardcoding 6 businesses until Yelp functionality is implemented.
+const businesses = [business, business, business, business, business, business];
 
 class App extends React.Component {
   render() {
@@ -12,7 +25,7 @@ class App extends React.Component {
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
-        <BusinessList />
+        <BusinessList businesses={businesses} />
       </div>
     );
   }
