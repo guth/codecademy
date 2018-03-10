@@ -25,7 +25,7 @@ class BusinessList extends React.Component
 
 		return (
 			<div className="BusinessList">
-				{businessComponents};
+				{businessComponents}
 			</div>
 		);
 	}
